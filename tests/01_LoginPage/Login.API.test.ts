@@ -19,15 +19,12 @@ test('Test Case 1.4: Login with Valid Credentials API', async () => {
 
     const homeResponse = await apiRequestContext.get('/home', {
         headers: {
-            'Authorization': 'Bearer ${token}', // Include the token in the Authorization header
+            'Authorization': 'Bearer ${token}', 
         },
     });
 
-    // Step 5: Assert the response from /home
     expect(homeResponse.status()).toBe(200);
 
-    // Optionally, assert response body from /home
     const homeResponseBody = await homeResponse.json();
-    // Example: Assert that the home page response includes expected data
-    expect(homeResponseBody.message).toBe('Welcome to the homepage!'); // Modify according to your response
+    expect(homeResponseBody.message).toBe('Welcome to the homepage!');
 });

@@ -2,14 +2,14 @@ import { defineConfig } from '@playwright/test';
 import { cpus } from "os";
 
 export default defineConfig({
-    testDir: "./tests", // Path to the test directory
-    workers: cpus().length, // Number of workers based on CPU cores
+    testDir: "./tests",
+    workers: cpus().length, 
     use: {
         headless: false, 
         viewport: { width: 1920, height: 1080 },
         ignoreHTTPSErrors: true,
-        screenshot: "on", // Enable screenshots
-        trace: "on", // Enable trace for debugging
+        screenshot: "on",
+        trace: "on",
     },
     projects: [
         {
@@ -21,7 +21,7 @@ export default defineConfig({
         },
     ],
     reporter: [
-        ['list'], // Console output
-        ['json', { outputFile: 'test-results/test-results.json' }]
+        ['list'], //výstup v konzoli
+        ['json', { outputFile: 'test-results/test-results.json' }] //výstup ve file
     ],
 });
